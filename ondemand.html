@@ -13,7 +13,7 @@
       <b>hello world</b>
     </ondemand-file>
 
-    <iframe border="1" src="https://file.dddddddddzzzz.org/test.html"></iframe>
+    <iframe border="1" src="https://file.dddddddddzzzz.org/test.html?origin=https://muan.github.io/test/ondemand.html"></iframe>
   </main>
   <script>class OndemandFileElement extends HTMLElement {
     constructor() {
@@ -48,6 +48,7 @@
         fetch(this.endpoint, {
             method: 'POST',
             headers: {
+                'Referer': location.href,
                 'Content-Type': 'application/json'
             },
             body: JSON.stringify({
